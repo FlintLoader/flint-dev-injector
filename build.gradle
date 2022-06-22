@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+group = 'net.flintloader'
+archivesBaseName = 'flint-dev-launch-injector'
+version = '0.1'
+
+sourceSets {
+    main {
+        java.srcDirs = ['src']
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact(jar)
+        }
+    }
+
+    repositories {
+        maven {
+            url "https://maven.flintloader.net/releases"
+            credentials {
+                username System.getenv("MAVEN_USER")
+                password System.getenv("MAVEN_PASS")
+            }
+        }
+    }
+}
