@@ -47,16 +47,16 @@ import java.util.regex.Pattern;
  */
 public final class Main {
 	public static void main(String[] args) throws Throwable {
-		String env = System.clearProperty("lint.dli.env"); // desired environment, for config section selection
-		String main = System.clearProperty("lint.dli.main"); // main class to invoke afterwards
-		String config = System.clearProperty("lint.dli.config"); // config file location
+		String env = System.clearProperty("flint.dli.env"); // desired environment, for config section selection
+		String main = System.clearProperty("flint.dli.main"); // main class to invoke afterwards
+		String config = System.clearProperty("flint.dli.config"); // config file location
 		Path configFile;
 
 		if (main == null) {
-			System.err.println("error: missing lint.dli.main property, can't launch");
+			System.err.println("error: missing flint.dli.main property, can't launch");
 			System.exit(1);
 		} else if (env == null || config == null) {
-			warnNoop("missing lint.dli.env or fabric.dli.config properties");
+			warnNoop("missing flint.dli.env or flint.dli.config properties");
 		} else if (!Files.isRegularFile(configFile = Paths.get(decodeEscaped(config)))
 				|| !Files.isReadable(configFile)) {
 			warnNoop("missing or unreadable config file ("+configFile+")");

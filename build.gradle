@@ -8,7 +8,7 @@ targetCompatibility = 1.8
 
 group = 'net.flintloader'
 archivesBaseName = 'flint-dev-launch-injector'
-version = '0.1'
+version = '0.1.1'
 
 sourceSets {
     main {
