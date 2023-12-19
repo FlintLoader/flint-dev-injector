@@ -27,8 +27,8 @@ import java.util.regex.Pattern;
  * <p>Example invocation:
  * {@code java
  * -flint.dli.env=client
- * -Dlint.dli.main=something.pkg.Main
- * -Dlint.dli.config=/home/user/some/config.cfg
+ * -Dflint.dli.main=something.pkg.Main
+ * -Dflint.dli.config=/home/user/some/config.cfg
  * -cp [...]
  * net.flintloader.devlaunchinjector.Main
  * [pass-through args...]}
@@ -38,11 +38,11 @@ import java.util.regex.Pattern;
  * commonProperties
  *   lint.development=true
  * clientProperties
- *   java.library.path=/home/user/.gradle/caches/fabric-loom/natives/1.14.4
- *   org.lwjgl.librarypat=/home/user/.gradle/caches/fabric-loom/natives/1.14.4
+ *   java.library.path=/home/user/.gradle/caches/flint-steel/natives/1.14.4
+ *   org.lwjgl.librarypat=/home/user/.gradle/caches/flint-steel/natives/1.14.4
  * clientArgs
  *   --assetIndex=1.14.4-1.14
- *   --assetsDir=/home/user/.gradle/caches/fabric-loom/assets
+ *   --assetsDir=/home/user/.gradle/caches/flint-steel/assets
  * }</pre>
  */
 public final class Main {

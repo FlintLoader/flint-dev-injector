@@ -6,9 +6,18 @@ plugins {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+var baseVersion = "1.0"
+
 group = 'net.flintloader'
 archivesBaseName = 'flint-dev-launch-injector'
-version = '0.1.1'
+
+def ENV = System.getenv()
+if (ENV.BUILD_NUMBER) {
+    var build = (ENV.BUILD_NUMBER.toInteger() - 1)
+    version = "${baseVersion}.${build}"
+} else {
+    version = "${baseVersion}.local"
+}
 
 sourceSets {
     main {
